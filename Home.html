@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: rgb(198, 129, 44);
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .navbar li {
+      margin: 10px;
+    }
+
+    .navbar li a {
+      text-decoration: none;
+      color: white;
+      padding: 6px 12px;
+      display: block;
+    }
+
+    /* Headings and Text */
+    h1 {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .cmp-text p {
+      text-align: center;
+      padding: 10px;
+      margin: 10px;
+      font-size: 1.25em;
+    }
+
+    /* Responsive Image */
+    picture img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Responsive Video */
+    video {
+      width: 100%;
+      max-width: 800px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+
+    /* Section Titles */
+    section h1 {
+      font-size: 2em;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* Text Content Section */
+    .cmp-text a {
+      color: #0070f3;
+      text-decoration: underline;
+    }
+
+    .cmp-text {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Media Query for Smaller Screens */
+    @media (max-width: 600px) {
+      .navbar ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cmp-text p {
+        font-size: 1em;
+      }
+
+      section h1 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Lacoste.html">Lacoste</a></li>
+        <li><a href="RAC.html">Rac Record</a></li>
+      </ul>
+    </nav>
+
+    <h1>Adobe XD for <br> Web design.</h1>
+    <div class="cmp-text">
+      <p>By Matt Rae</p>
+    </div>
+  </header>
+
+  <main>
+    <picture>
+      <source srcset="https://cc-prod.scene7.com/is/image/CCProdAuthor/using-adobe-xd-for-web-design_00?$png$&jpegSize=300&wid=1440" media="(min-width: 1200px)">
+      <source srcset="https://cc-prod.scene7.com/is/image/CCProdAuthor/using-adobe-xd-for-web-design_00?$png$&jpegSize=200&wid=900" media="(min-width: 600px)">
+      <source srcset="https://cc-prod.scene7.com/is/image/CCProdAuthor/using-adobe-xd-for-web-design_00?$png$&jpegSize=100&wid=599" media="(max-width: 599px)">
+      <img src="https://cc-prod.scene7.com/is/image/CCProdAuthor/using-adobe-xd-for-web-design_00?$png$&jpegSize=300&wid=1440" alt="Adobe XD for Web Design">
+    </picture>
+
+    <div class="cmp-text">
+      <p>
+        Getting started on your first web design project in Adobe XD is simple and easy.
+        With a number of preconfigured artboard templates to choose from, you can hit the ground
+        running, designing experiences for screens of various sizes.
+      </p>
+    </div>
+
+    <section>
+      <h1>Hover states</h1>
+    </section>
+
+    <div class="cmp-text">
+      <p>Generating <a href="https://www.adobe.com/products/xd/learn/prototype/component-states/use-auto-animate-and-component-states.html">micro-interactions like hover states</a> is easy to do with Component States. States allow these interactions to be built onto reusable components like buttons, and reduce the number of artboards needed to create rich experiences.</p>
+      <p>To create a hover state, select the component you wish to use, and then click the ‘+’ next to ‘Default State’ in the top right corner. It is best to do this on the Main Component so that interactions apply to all instances. With the ‘+’ clicked, select ‘Hover State’ - the lightning bolt indicates this state is pre-prototyped for you. Then simply adjust the parameters and style of the element for how it should look when hovered. Set the state back to default, and click preview to interact with the new state.</p>
+    </div>
+
+    <video preload="metadata" playsinline muted loop controls>
+      <source src="https://images-tv.adobe.com/mpcv3/4851/9f293582-29e1-4cb4-94dd-4e6af6c631ec_1608337256.854x480at800_h264.mp4" type="video/mp4">
+    </video>
+  </main>
+
+</body>
+</html>
