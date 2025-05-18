@@ -1,83 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lacoste</title>
-        <style>
-                .navbar{
-                        background-color: green;
-                        border-radius: 5px;
-                }
-                .navbar ul{
-                        overflow: auto;
-                        padding: 3px 3px;
-                }
-                .navbar li{
-                        float: left;
-                        list-style: none;
-                        margin: 10px 10px;
-                        align-items: center;
-                }
-                .navbar li a{
-                        padding: 3px 3px;
-                        text-decoration: none;
-                        color: white;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Lacoste's trending men's, women's, and kids' clothing collections.">
+    <title>Lacoste</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                }
-                .search{
-                        float:right;
-                        color: white;
-                        padding: 12px 75px;
-                        
-                }
-                .navbar input{
-                        border:2px solid black ;
-                        border-radius: 5px;
-                        padding: 3px 17px;
-                }
-                section ul li{
-                        float: left;
-                        list-style: none;
-                        margin: 10px 10px;
-                }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-        </style>
+        /* Navbar */
+        .navbar {
+            background-color: #008000; /* Green */
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .navbar li {
+            margin: 10px;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .navbar li a:hover {
+            background-color: #006400; /* Darker green on hover */
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .navbar input {
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 1rem;
+            width: 200px;
+            max-width: 100%;
+        }
+
+        .navbar input:focus {
+            outline: none;
+            border-color: #006400;
+        }
+
+        /* Section */
+        .trending {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .trending h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .trending ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            list-style: none;
+        }
+
+        .trending li img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .trending li img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar input {
+                width: 100%;
+            }
+
+            .trending h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .navbar li {
+                margin: 5px;
+            }
+
+            .trending {
+                padding: 10px;
+            }
+
+            .trending ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-        <header>
-                <nav class="navbar">
-                        <ul>
-                                <li><a href="Home.html">Home</a></li>
-                                <li><a href="RAC.html">Rac Records </a></li>
-                                <li><a href="https://www.flipkart.com/q/mens-clothing">MAN</a></li>
-                                <li><a href="https://www.google.com/search?q=flipkart+women+clothes&sca_esv=42bda1b6e743cdb7&rlz=1C1GCEU_enIN1161IN1161&sxsrf=AHTn8zrqnUVrMk4HDa4naBYw93COQ_4SOw%3A1747537799944&ei=h08paLe1ObSt4-EPzd2E8Qs&oq=flipkart+women+cl&gs_lp=Egxnd3Mtd2l6LXNlcnAiEWZsaXBrYXJ0IHdvbWVuIGNsKgIIADIKEAAYgAQYFBiHAjIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSIxcUMUGWNxJcAF4AZABAJgBowGgAbQJqgEDMC45uAEByAEA-AEBmAIKoAL6CcICChAAGLADGNYEGEfCAg0QABiABBiwAxhDGIoFwgIZEC4YgAQYsAMY0QMYQxjHARjIAxiKBdgBAcICFhAuGIAEGLADGEMY5QQYyAMYigXYAQHCAg0QABiABBgUGIcCGMkDwgIIEAAYgAQYsQPCAg0QABiABBixAxgUGIcCwgILEAAYgAQYsQMYgwHCAgsQABiABBiSAxiKBcICDhAAGIAEGJECGLEDGIoFwgILEAAYgAQYkQIYigXCAgsQLhiABBjHARivAZgDAIgGAZAGEroGBggBEAEYCJIHAzEuOaAHnTmyBwMwLjm4B-kJwgcFMi04LjLIB0E&sclient=gws-wiz-serp">WOMEN</a> </li>
-                                <li> <a href="">KIDS</a></li>
-                                <li> <a href="">SALE</a></li>
-                                <li> <a href="">DISCOVER</a></li>
-                        
-                        <div class="search">
-                               <input type="text" name="search" id="search" placeholder=" find a product">
-                               <option value="MAN"></option>
-                        </div>
-                        </ul>
-                </nav>
-        </header>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="RAC.html">RCA Records</a></li>
+                <li><a href="https://www.flipkart.com/q/mens-clothing">Men</a></li>
+                <li><a href="https://www.flipkart.com/search?q=women+clothing">Women</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Sale</a></li>
+                <li><a href="#">Discover</a></li>
+            </ul>
+            <div class="search">
+                <input type="text" name="search" id="search" placeholder="Find a product" aria-label="Search products">
+            </div>
+        </nav>
+    </header>
 
-        <section >
-                <h1>Now Trending</h1>
-                <ul>
-                        <li><img width="400px" src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dwe81415e0/SS25/PLP-Headers/CH2-Update/men_tees.jpg?imwidth=540&impolicy=custom" alt=""></li>
-                        <li><img width="400px" src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dw36238b8c/SS25/PLP-Headers/men_tees_classic.jpg?imwidth=540&impolicy=custom" alt=""></li>
-                        <li><img  width="400px" src=https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dw37256487/SS25/PLP-Headers/men_tees_loose.jpg?imwidth=540&impolicy=custom" alt=""></li>
-                        <li><img width="400px" src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dw063a6583/SS25/PLP-Headers/men_tees_sport.jpg?imwidth=540&impolicy=custom" alt=""></li>
-                        <li><img width="400px" src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dwb220ae15/SS25/HP-Updates/5.16/block-desk%20(4).jpg?imwidth=840&impolicy=custom" alt=""></li>
-                        <li><img width="400px" height="400px" src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw6e0897c9/EF0615_HIG_20.jpg?imwidth=450&impolicy=pctp" alt=""></li>
-                        <li><img width="400px" src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dwb77d04c7/PJ8428_QRN_20.jpg?imwidth=450&impolicy=pctp" alt=""></li>
-                        <li><img width="400px" src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw6e01a0ec/TJ8440_HJI_20.jpg?imwidth=450&impolicy=pctp" alt=""></li>
-                        <li><img width="400px" src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dwe96d9b88/TJ8431_2CQ_20.jpg?imwidth=450&impolicy=pctp" alt=""></li>
-                        <li><a href="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dwe81415e0/SS25/PLP-Headers/CH2-Update/men_tees.jpg?imwidth=540&impolicy=custom"></a></li>
-                </ul>
-        </section>
+    <section class="trending">
+        <h1>Now Trending</h1>
+        <ul>
+            <li><img src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dwe81415e0/SS25/PLP-Headers/CH2-Update/men_tees.jpg?imwidth=540&impolicy=custom" alt="Men's Tees"></li>
+            <li><img src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dw36238b8c/SS25/PLP-Headers/men_tees_classic.jpg?imwidth=540&impolicy=custom" alt="Men's Classic Tees"></li>
+            <li><img src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dw37256487/SS25/PLP-Headers/men_tees_loose.jpg?imwidth=540&impolicy=custom" alt="Men's Loose Tees"></li>
+            <li><img src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dw063a6583/SS25/PLP-Headers/men_tees_sport.jpg?imwidth=540&impolicy=custom" alt="Men's Sport Tees"></li>
+            <li><img src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Library-Sites-LacosteContent/default/dwb220ae15/SS25/HP-Updates/5.16/block-desk%20(4).jpg?imwidth=840&impolicy=custom" alt="Lacoste Block Design"></li>
+            <li><img src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw6e0897c9/EF0615_HIG_20.jpg?imwidth=450&impolicy=pctp" alt="Lacoste Kids Clothing"></li>
+            <li><img src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dwb77d04c7/PJ8428_QRN_20.jpg?imwidth=450&impolicy=pctp" alt="Lacoste Pajamas"></li>
+            <li><img src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw6e01a0ec/TJ8440_HJI_20.jpg?imwidth=450&impolicy=pctp" alt="Lacoste Kids Tees"></li>
+            <li><img src="https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dwe96d9b88/TJ8431_2CQ_20.jpg?imwidth=450&impolicy=pctp" alt="Lacoste Kids Outfit"></li>
+        </ul>
+    </section>
 </body>
 </html>
